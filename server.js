@@ -1,6 +1,7 @@
 // =================== Setup ===================
 const express = require('express');
 const app = express();
+const port = 3000;
 
 // =================== Data ===================
 const collectibles = [
@@ -20,6 +21,11 @@ const shoes = [
 ];
 
 // =================== Routes ===================
+
+// Root route
+app.get('/', (req, res) => {
+  res.send('Welcome to the server home page!');
+});
 
 // 1. Greetings route
 app.get('/greetings/:username', (req, res) => {
@@ -78,5 +84,4 @@ app.get('/shoes', (req, res) => {
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
-
 
